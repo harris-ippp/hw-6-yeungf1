@@ -18,9 +18,9 @@ for x in row1:
     year_id=x['id'][-5:]
 
     url_download = url_template.replace("{}", year_id)
-       
+
     resp = requests.get(url_download)
 
-    file_name = year + ".csv"
+    file_name = "president_general_" + year + ".csv"
     with open (file_name, "w") as out:
         out.write(resp.text)
